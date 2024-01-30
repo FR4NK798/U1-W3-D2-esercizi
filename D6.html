@@ -152,13 +152,18 @@
       */
 
       const hideFirstUl = (list) => list.remove();
-      hideFirstUl(list);
+      // hideFirstUl(list);
 
       /* ESERCIZIO 8
          Scrivi una funzione che renda verde il background di ogni lista non ordinata
         */
+      let newList = document.querySelectorAll("ul");
 
-      const paintItGreen = function () {};
+      const paintItGreen = (ul) => {
+        ul = Array.from(ul);
+        newList.forEach((newList) => (newList.style = "background-color: green"));
+      };
+      paintItGreen(newList);
 
       /* ESERCIZIO 9
          Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
