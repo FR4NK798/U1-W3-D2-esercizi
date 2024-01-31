@@ -35,7 +35,9 @@
 
   <body>
     <div>
-      <h1>Questo è il titolo della pagina</h1>
+      <button id="buttonRemoveH1">
+        <h1>Questo è il titolo della pagina</h1>
+      </button>
       <h2>Questo è il sottotitolo della pagina</h2>
     </div>
 
@@ -93,7 +95,7 @@
          Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
       */
 
-      const h1 = document.getElementsByTagName("h1")[0];
+      let h1 = document.getElementsByTagName("h1")[0];
       const addClassToTitle = function (h1) {
         h1.classList.add("myHeading");
       };
@@ -168,14 +170,30 @@
       /* ESERCIZIO 9
          Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
         */
+      // const button = document.getElementById("remove-list-item");
+      // button.onclick = function () {
+      //   secondUl.lastElementChild.remove();
+      // };
 
-      const makeItClickable = function () {};
+      // myHeading
+
+      const button = document.getElementById("buttonRemoveH1");
+      const h1Array = Array.from(h1.innerText);
+      console.log(h1Array);
+      h1Array.pop();
+      console.log(h1Array);
+
+      button.onclick = function () {
+        h1Array.pop();
+        h1.innerText = h1Array.join("");
+      };
 
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
 
       const revealFooterLink = function () {};
+
       //saltare
       /* ESERCIZIO 11
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
